@@ -1,0 +1,40 @@
+@import url("colors.css");
+.post{
+  margin-top: -3px;
+  font-size: 17px;
+  border: 3px var(--light) solid;
+  background-color: var(--back);
+}
+.post div{
+  display: inline-block;
+}
+.subject{
+  width: 10%;
+  text-align: center;
+}
+.Math{
+  color: var(--math);
+}
+.Phy{
+  color: var(--phy);
+}
+.Chem{
+  color: var(--chem);
+}
+.Geo{
+  color: var(--geo);
+}
+.Other{
+  color: #000;
+}
+.title{
+  padding-left: 40px;
+  border-left: 3px var(--light) solid;
+}
+.title a:visited, a:link{
+  color: var(--text);
+  text-decoration: none;
+}
+.title a:hover{
+  color: var(--light);
+}

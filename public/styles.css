@@ -1,0 +1,18 @@
+@import url("colors.css");
+body{
+  background-color: var(--back);
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
+}
+.container{
+  padding: 3px 300px 0px 300px;
+}
+header h1{
+  font-size: 50px;
+  text-align: center;
+}
+footer p{
+  color: var(--dark);
+  margin-top: 100px;
+  font-size: 10px;
+  text-align: center;
+}
