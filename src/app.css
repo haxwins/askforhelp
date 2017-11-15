@@ -1,47 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 #nav{
-  margin: 30px 0 60px 0;
+  margin: 30px 0 20px 0;
   display: flex;
-  justify-content: space-around
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 #nav  div{
+  font-family: Bree Serif;
   flex-grow: 1;
   text-align: center;
-  font-size: 17px;
+  font-size: 18px;
   margin-left: -1px;
   cursor: pointer;
+  padding:0 5px 0 5px;
 }
-.nav-Math{
-  color: var(--math);
+#input{
+  display: flex;
+  justify-content: center;
+  margin: 0 0 30px 0;
 }
-.nav-Phy{
-  color: var(--phy);
+#input input{
+  padding-left: 13px;
+  font-size: 14px;
+  font-family: Open Sans;
+  display: inline-block;
+  box-shadow: inset 0px 0px 0px 0px #bcbcbc;
+  min-width: 500px;
+  border: 3px var(--light) solid;
+  color: var(--text);
+  box-sizing: border-box;
+}
+#add{
+  display: flex;
+  justify-content: flex-end;
+  margin:0 0 6px 0;
+}
+#add button{
+  cursor: pointer;
+  padding:2px;
+  background-color: var(--Mat);
+  border: 1px solid var(--Mat);
+  min-width: 200px;
+  color: #fff;
+  font-family: Bree Serif;
+}
+.nav-Mat{
+  color: var(--Mat);
+}
+.nav-Pol{
+  color: var(--Pol);
+}
+.nav-Ang{
+  color: var(--Ang);
+}
+.nav-His{
+  color: var(--His);
+}
+.nav-Bio{
+  color: var(--Bio);
+}
+.nav-Fiz{
+  color: var(--Fiz);
 }
 .nav-Chem{
-  color: var(--chem);
+  color: var(--Chem);
 }
 .nav-Geo{
-  color: var(--geo);
+  color: var(--Geo);
 }
-.nav-Other{
-  color: #000;
+.nav-Inne{
+  color: var(--text);
 }
-div.nav-Math:hover{
+div.nav-Mat:hover{
   color: #fff;
-  background: var(--math);
+  background: var(--Mat);
 }
-div.nav-Phy:hover{
+div.nav-Pol:hover{
   color: #fff;
-  background-color: var(--phy);
+  background: var(--Pol);
+}
+div.nav-His:hover{
+  color: #fff;
+  background: var(--His);
+}
+div.nav-Ang:hover{
+  color: #fff;
+  background: var(--Ang);
+}
+div.nav-Bio:hover{
+  color: #fff;
+  background: var(--Bio);
+}
+div.nav-Fiz:hover{
+  color: #fff;
+  background: var(--Fiz);
 }
 div.nav-Chem:hover{
   color: #fff;
-  background: var(--chem);
+  background: var(--Chem);
 }
 div.nav-Geo:hover{
   color: #fff;
-  background: var(--geo);
+  background: var(--Geo);
 }
-div.nav-Other:hover{
+div.nav-Inne:hover{
   color: #fff;
-  background: var(--other);
+  background-color: var(--text);
 }
