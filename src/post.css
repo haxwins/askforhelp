@@ -7,6 +7,7 @@
   border: 3px var(--light) solid;
   background-color: var(--back);
   font-family: Open Sans;
+  color: var(--text);
 }
 .post div{
   display: inline-block;
@@ -17,12 +18,14 @@
   border: 3px var(--light) solid;
   background-color: var(--back);
   font-family: Open Sans;
+  color: var(--text);
   padding:10px;
 }
 .postInside textarea{
   padding: 4px;
   border: 3px var(--light) solid;
   font-family: Open Sans;
+  color: var(--text);
   font-size: 12px;
   margin-top:30px;
   width: 100%;
@@ -35,6 +38,7 @@
   border: 3px var(--light) solid;
   background-color: var(--back);
   font-family: Open Sans;
+  color: var(--text);
   padding:10px;
 }
 .addComm{

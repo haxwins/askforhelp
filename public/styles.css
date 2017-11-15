@@ -1,4 +1,6 @@
-@import url("colors.css");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url("./src/colors.css");
 body{
   background-color: var(--back);
   font: 15px/1.5 Arial, Helvetica, sans-serif;
@@ -6,9 +8,10 @@ body{
 .container{
   padding: 3px 300px 0px 300px;
 }
-header h1{
+header .container h1{
   font-size: 50px;
   text-align: center;
+  font-family: Bree Serif;
 }
 footer p{
   color: var(--dark);

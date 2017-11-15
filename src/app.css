@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url("colors.css");
 #nav{
   margin: 30px 0 20px 0;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-#nav  div{
+#nav div{
   font-family: Bree Serif;
   flex-grow: 1;
   text-align: center;
@@ -21,7 +22,7 @@
   margin: 0 0 30px 0;
 }
 #input input{
-  padding-left: 13px;
+  padding-left: 5px;
   font-size: 14px;
   font-family: Open Sans;
   display: inline-block;
