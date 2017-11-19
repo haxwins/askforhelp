@@ -11,15 +11,10 @@ class Post extends Component {
   componentWillReceiveProps(){
     this.setState({postOpen: false})
   }
-  toggle(){
-    if(this.state.postOpen){
-      this.setState({postOpen: false})
-    }
-    else{
-      this.setState({postOpen: true})
-    }
+  toggle = () =>{
+    this.setState({postOpen: !this.state.postOpen});
   }
-  showPost(){
+  showPost = () =>{
     if(this.state.postOpen){
       console.log(this.props);
       return (
