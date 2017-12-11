@@ -9,6 +9,7 @@ class App extends Component {
     this.state = {
       postsAll: arr_posts,
       postsCurrent: arr_posts,
+	  postAdd: false,
     }
   }
   filter(key){
@@ -35,6 +36,22 @@ class App extends Component {
     })
     this.setState({postsCurrent: newarr});
   }
+  toggle = () =>{
+    this.setState({postAdd: !this.state.postAdd});
+  }
+  showPostAdd = () =>{
+    if(this.state.postAdd){
+      console.log(this.props);
+      return (
+        <div>
+          asds
+        </div>
+      )
+    }
+    else{
+      return <div></div>
+    }
+  }
   render() {
     return (
       <div>
@@ -54,8 +71,11 @@ class App extends Component {
           <div className="nav-Inne" onClick={()=>{this.filter("Inne")}}>Inne</div>
         </div>
         <div id="add">
-          <button>Dodaj post</button>
+          <button onClick={()=>this.toggle()}>{(this.state.postAdd) ? 'X' : 'Dodaj post'}</button>
         </div>
+		<div>
+			{this.showPostAdd()}
+		</div>
         <div>
             {this.state.postsCurrent.map((v)=>{return <Post subject={v.subject} title={v.title} post={v.postText} comments={v.comments}/>})}
         </div>
@@ -63,6 +83,4 @@ class App extends Component {
     );
   }
 }
-App.defaultProps = {
-};
 export default App;

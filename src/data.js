@@ -105,6 +105,12 @@ const arr_posts = [{
   title: 'Niemiecki, odmiany czasowników',
   postText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae purus mollis, lacinia erat non, consequat ipsum. Nam et laoreet est. Nulla luctus congue ante, eu ornare urna tempor vitae. Quisque quis odio mi. Vestibulum eleifend euismod nunc ultrices imperdiet. Praesent urna sapien, lobortis pretium malesuada feugiat, ultrices sed arcu. Sed sit amet ornare leo. Cras in luctus velit. Morbi ut lorem dolor. Vivamus interdum tempus arcu at facilisis. Suspendisse ac gravida diam. Donec commodo mollis efficitur. Vivamus vitae dolor rhoncus, posuere ipsum et, scelerisque ipsum. Suspendisse malesuada purus tempor volutpat mattis. Vestibulum sed nisi eros.',
   comments: ['dsaagsdgaga', 'Siema'],
+},
+{
+  subject: 'Inne',
+  title: 'tibia- wideorecenzja',
+  postText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae purus mollis, lacinia erat non, consequat ipsum. Nam et laoreet est. Nulla luctus congue ante, eu ornare urna tempor vitae. Quisque quis odio mi. Vestibulum eleifend euismod nunc ultrices imperdiet. Praesent urna sapien, lobortis pretium malesuada feugiat, ultrices sed arcu. Sed sit amet ornare leo. Cras in luctus velit. Morbi ut lorem dolor. Vivamus interdum tempus arcu at facilisis. Suspendisse ac gravida diam. Donec commodo mollis efficitur. Vivamus vitae dolor rhoncus, posuere ipsum et, scelerisque ipsum. Suspendisse malesuada purus tempor volutpat mattis. Vestibulum sed nisi eros.',
+  comments: ['dsaagsdgaga', 'Siema'],
 },];
 
 export default arr_posts;
