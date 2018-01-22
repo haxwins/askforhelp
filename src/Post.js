@@ -16,14 +16,15 @@ class Post extends Component {
   }
   showPost = () =>{
     if(this.state.postOpen){
-      console.log(this.props);
+	  let action = 'http://localhost:3000/comment/' + this.props.id;
       return (
         <div className="postInside">
           <div>{this.props.post}</div>
           <div>{this.props.comments.map((v)=>{return <div className="comment">{v}</div>})}</div>
-          <textarea placeholder="Dodaj odpowiedz..." rows="10" cols="30">
-          </textarea>
-          <div className="addComm">Dodaj odpowiedz</div>
+		  <form method="post" action={action}>
+			<textarea name="[comment]" placeholder="Dodaj odpowiedz..." rows="10" cols="30" required/>
+			<input className="addComm" type="submit" value="Dodaj odpowiedz"/>
+		  </form>
         </div>
       )
     }
@@ -49,6 +50,7 @@ class Post extends Component {
 
 }
 Post.defaultProps = {
+  _id: "",
   subject: "Other",
   title: "No title",
   post: "Empty",

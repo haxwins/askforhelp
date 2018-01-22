@@ -42,20 +42,21 @@
   padding:10px;
 }
 .addComm{
-  padding:2px;
-  font-family: Bree Serif;
-  background-color: var(--Mat);
   cursor: pointer;
-  text-align: center;
+  padding:2px;
+  margin:10px 0 0 50px;
+  background-color: var(--Mat);
+  border: 1px solid var(--Mat);
+  min-width: 200px;
   color: #fff;
-  width: 200px;
-  margin: 10px 0 0 calc(50% - 100px);
+  font-family: Bree Serif;
 }
 .subject{
   font-family: Bree Serif;
   width: 10%;
   text-align: center;
 }
+
 .Mat{
   color: var(--Mat);
 }
