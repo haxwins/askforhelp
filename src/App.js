@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import Post from './Post.js'
 import './app.css';
-import arr_posts from './data.js'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
 	  postsAll: [],
-      postsCurrent: [],
+    postsCurrent: [],
 	  postAdd: false,
     }
       let url = 'http://localhost:3000/posts';
       fetch(url)
         .then((response)=>response.json())
-		.then(response=>{
-			response.sort(this.dateSortDesc);
-			this.setState({postsAll: response});
-			this.setState({postsCurrent: response});
-      })
+		    .then(response=>{
+			       response.sort(this.dateSortDesc);
+			          this.setState({postsAll: response,
+                              postsCurrent: response});
+			  })
   }
   filter(key){
     if(key === "All"){
@@ -31,7 +30,7 @@ class App extends Component {
           return newarr = [...newarr,v];
         }
       })
-	  newarr.sort(this.dateSortDesc);
+	    newarr.sort(this.dateSortDesc);
       this.setState({postsCurrent: newarr});
     }
   }

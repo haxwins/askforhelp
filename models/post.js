@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 // Post Schema
-
 const postSchema = mongoose.Schema({
 	date:{
 		type: Date

@@ -21,10 +21,10 @@ class Post extends Component {
         <div className="postInside">
           <div>{this.props.post}</div>
           <div>{this.props.comments.map((v)=>{return <div className="comment">{v}</div>})}</div>
-		  <form method="post" action={action}>
-			<textarea name="[comment]" placeholder="Dodaj odpowiedz..." rows="10" cols="30" required/>
-			<input className="addComm" type="submit" value="Dodaj odpowiedz"/>
-		  </form>
+		      <form method="post" action={action}>
+			       <textarea name="[comment]" placeholder="Dodaj odpowiedz..." rows="10" cols="30" required/>
+			       <input className="addComm" type="submit" value="Dodaj odpowiedz"/>
+		      </form>
         </div>
       )
     }
