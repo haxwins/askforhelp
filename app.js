@@ -42,8 +42,6 @@ app.post('/',(req,res)=>{
 });
 //adding new comment
 app.post('/comment/:_id',(req,res)=>{
-	console.log(req.params._id);
-	console.log(req.body.comment);
 	let id = req.params._id;
 	let newComm = req.body.comment;
 	Post.addComm(id, newComm, {}, (err, newComm) => {
