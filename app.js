@@ -1,19 +1,20 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+let express = require('express');
+let app = express();
+let bodyParser = require('body-parser');
+let mongoose = require('mongoose');
+let port = 3000;
 
 Post = require('./models/post');
 
 // Connect to Mongoose
 mongoose.connect('mongodb://localhost/askforhelp');
-var db = mongoose.connection;
+let db = mongoose.connection;
 
-app.get('/',(req, res)=>{
-	res.send('Heello');
-	
+//requests
+app.get('/connectioncheck',(req, res)=>{
+	res.send('Server is working');
 });
-
+//getting all posts
 app.get('/posts', (req, res)=>{
 	Post.getPost((err,post)=>{
 		if(err){
@@ -27,7 +28,7 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.use(bodyParser.json());
-
+//adding new post
 app.post('/',(req,res)=>{
 	let newPost = req.body;
 	newPost.date = new Date();
@@ -39,7 +40,7 @@ app.post('/',(req,res)=>{
 		res.json(newPost);
 	})
 });
-
+//adding new comment
 app.post('/comment/:_id',(req,res)=>{
 	console.log(req.params._id);
 	console.log(req.body.comment);
@@ -53,5 +54,5 @@ app.post('/comment/:_id',(req,res)=>{
 	});
 })
 
-app.listen(3000);
-console.log('running on port 3000...');
+app.listen(port);
+console.log('running on port ' + port + '...');
