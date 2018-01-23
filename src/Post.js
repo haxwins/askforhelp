@@ -14,7 +14,7 @@ class Post extends Component {
   toggle = () =>{
     this.setState({postOpen: !this.state.postOpen});
   }
-  handleSubmit = () =>{
+  handleSubmit = (e) =>{
     e.preventDefault()
     let comment = document.getElementById(this.props.id).value;
     let url = 'http://localhost:3000/comment' + '/' + this.props.id + '/' + comment;
@@ -35,7 +35,7 @@ class Post extends Component {
           <div>{this.props.comments.map((v)=>{return <div className="comment">{v}</div>})}</div>
 		      <form>
 			       <textarea id={this.props.id} placeholder="Dodaj odpowiedz..." rows="10" cols="30"/>
-             <button id="z" className="addComm" onClick={()=>{this.handleSubmit()}}>Dodaj odpowiedz</button>
+             <button id="z" className="addComm" onClick={(e)=>{this.handleSubmit(e)}}>Dodaj odpowiedz</button>
 		      </form>
         </div>
       )
