@@ -10,14 +10,64 @@ class App extends Component {
     postsCurrent: [],
 	  postAdd: false,
     }
-      let url = 'http://localhost:3000/posts';
-      fetch(url)
-        .then((response)=>response.json())
-		    .then(response=>{
-			       response.sort(this.dateSortDesc);
-			          this.setState({postsAll: response,
-                              postsCurrent: response});
-			  })
+    this.requestData();
+  }
+  requestData = () =>{
+    let url = 'http://localhost:3000/posts';
+    fetch(url)
+      .then((response)=>response.json())
+      .then(response=>{
+           response.sort(this.dateSortDesc);
+              this.setState({postsAll: response,
+                            postsCurrent: response});
+      })
+  }
+  showPostAdd = () =>{
+    if(this.state.postAdd){
+      return (
+        <div className="addPost">
+          <form>
+		        <div>
+			           <select id="subject" required>
+				               <option value="">Przedmiot</option>
+				               <option value="Mat">Matematyka</option>
+				               <option value="Pol">Polski</option>
+				               <option value="His">Historia</option>
+				               <option value="Fiz">Fizyka</option>
+				               <option value="Chem">Chemia</option>
+				               <option value="Geo">Geografia</option>
+				               <option value="Bio">Biologia</option>
+				               <option value="Ang">Angielski</option>
+				               <option value="Inne">Inny</option>
+			           </select>
+			           <input id="title" type="text" placeholder="Tytuł"/>
+		        </div>
+		        <div>
+			           <textarea id="postText" rows="3" placeholder="Treść..."/>
+		        </div>
+		        <div>
+			           <button onClick={(e)=>{this.handleSubmit(e)}}>Wyślij</button>
+	          </div>
+		       </form>
+		   </div>
+      )
+    }
+    else{
+      return <div></div>
+    }
+  }
+  handleSubmit = (e) =>{
+    e.preventDefault()
+    let subject = document.getElementById('subject').value;
+    let title = document.getElementById('title').value;
+    let postText = document.getElementById('postText').value;
+    console.log(subject);
+    console.log(title);
+    console.log(postText);
+    let url = 'http://localhost:3000/post' + '/' + subject + '/' + title + '/' + postText;
+    fetch(url, {method: 'post'});
+    this.toggle();
+    setTimeout(this.requestData,2000);
   }
   filter(key){
     if(key === "All"){
@@ -47,40 +97,6 @@ class App extends Component {
   }
   toggle = () =>{
     this.setState({postAdd: !this.state.postAdd});
-  }
-  showPostAdd = () =>{
-    if(this.state.postAdd){
-      return (
-        <div className="addPost">
-          <form method="post" action="http://localhost:3000/">
-		  <div>
-			<select name="[subject]" required>
-				<option value="">Przedmiot</option>
-				<option value="Mat">Matematyka</option>
-				<option value="Pol">Polski</option>
-				<option value="His">Historia</option>
-				<option value="Fiz">Fizyka</option>
-				<option value="Chem">Chemia</option>
-				<option value="Geo">Geografia</option>
-				<option value="Bio">Biologia</option>
-				<option value="Ang">Angielski</option>
-				<option value="Inne">Inny</option>
-			</select>
-			<input type="text" name="[title]" placeholder="Tytuł" required/>
-		</div>
-		<div>
-			<textarea rows="3" type="text" name="[postText]" placeholder="Treść..." required/>
-		</div>
-		<div>
-			<input type="submit" value="Wyślij"/>
-		</div>
-		</form>
-		</div>
-      )
-    }
-    else{
-      return <div></div>
-    }
   }
   dateSortDesc = (d1, d2) =>{
 		if (d1.date > d2.date) return -1;

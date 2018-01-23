@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 //adding new post
-app.post('/',(req,res)=>{
+/*app.post('/',(req,res)=>{
 	let newPost = req.body;
 	newPost.date = new Date();
 	newPost.comments = [];
@@ -39,11 +39,26 @@ app.post('/',(req,res)=>{
 		}
 		res.json(newPost);
 	})
+});*/
+app.post('/post/:subject/:title/:postText',(req,res)=>{
+	let newPost = {
+		date: new Date(),
+		subject: req.params.subject,
+		title: req.params.title,
+		postText: req.params.postText,
+		comments: []
+	}
+	Post.addPost(newPost, (err, newPost) => {
+		if(err){
+			throw err;
+		}
+		res.json(newPost);
+	})
 });
 //adding new comment
-app.post('/comment/:_id',(req,res)=>{
+app.post('/comment/:_id/:comment',(req,res)=>{
 	let id = req.params._id;
-	let newComm = req.body.comment;
+	let newComm = req.params.comment;
 	Post.addComm(id, newComm, {}, (err, newComm) => {
 		if(err){
 			throw err;
