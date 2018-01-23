@@ -16,10 +16,16 @@ class Post extends Component {
   }
   handleSubmit = (e) =>{
     e.preventDefault()
-    let comment = document.getElementById('comment').value;
+    let comment = document.getElementById(this.props.id).value;
     let url = 'http://localhost:3000/comment' + '/' + this.props.id + '/' + comment;
     fetch(url, {method: 'post'});
-    document.getElementById("comment").value = "Wysłano!";
+    if(comment!=''){
+      document.getElementById(this.props.id).value = "Wysłano!";
+      setTimeout(this.props.refreshData,1500);
+    }
+    else{
+        document.getElementById(this.props.id).placeholder = "Wypełnij pole";
+    }
   }
   showPost = () =>{
     if(this.state.postOpen){
@@ -28,7 +34,7 @@ class Post extends Component {
           <div>{this.props.post}</div>
           <div>{this.props.comments.map((v)=>{return <div className="comment">{v}</div>})}</div>
 		      <form>
-			       <textarea id="comment" placeholder="Dodaj odpowiedz..." rows="10" cols="30"/>
+			       <textarea id={this.props.id} placeholder="Dodaj odpowiedz..." rows="10" cols="30"/>
              <button id="z" className="addComm" onClick={(e)=>{this.handleSubmit(e)}}>Dodaj odpowiedz</button>
 		      </form>
         </div>

@@ -128,7 +128,7 @@ class App extends Component {
 			{this.showPostAdd()}
 		</div>
         <div>
-            {this.state.postsCurrent.map((v)=>{return <Post id={v._id} subject={v.subject} title={v.title} post={v.postText} comments={v.comments}/>})}
+            {this.state.postsCurrent.map((v)=>{return <Post refreshData={this.requestData} id={v._id} subject={v.subject} title={v.title} post={v.postText} comments={v.comments}/>})}
         </div>
       </div>
     );
