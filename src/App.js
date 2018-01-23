@@ -61,9 +61,6 @@ class App extends Component {
     let subject = document.getElementById('subject').value;
     let title = document.getElementById('title').value;
     let postText = document.getElementById('postText').value;
-    console.log(subject);
-    console.log(title);
-    console.log(postText);
     let url = 'http://localhost:3000/post' + '/' + subject + '/' + title + '/' + postText;
     fetch(url, {method: 'post'});
     this.toggle();
