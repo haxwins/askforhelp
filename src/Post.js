@@ -59,7 +59,6 @@ class Post extends Component {
       </div>
     );
   }
-
 }
 Post.defaultProps = {
   _id: "",
