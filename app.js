@@ -28,18 +28,6 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.use(bodyParser.json());
-//adding new post
-/*app.post('/',(req,res)=>{
-	let newPost = req.body;
-	newPost.date = new Date();
-	newPost.comments = [];
-	Post.addPost(newPost, (err, newPost) => {
-		if(err){
-			throw err;
-		}
-		res.json(newPost);
-	})
-});*/
 app.post('/post/:subject/:title/:postText',(req,res)=>{
 	let newPost = {
 		date: new Date(),
