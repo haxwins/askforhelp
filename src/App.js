@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Post from './Post.js'
+import renderData from './renderData.js'
 import './app.css';
 
 class App extends Component {
@@ -10,9 +11,8 @@ class App extends Component {
     postsCurrent: [],
 	  postAdd: false,
     }
-    this.requestData();
   }
-  requestData = () =>{
+  componentDidMount(){
     let url = 'http://localhost:3000/posts';
     fetch(url)
       .then((response)=>response.json())
@@ -29,16 +29,14 @@ class App extends Component {
           <form>
 		        <div>
 			           <select id="subject" required>
-				               <option value="">Przedmiot</option>
-				               <option value="Mat">Matematyka</option>
-				               <option value="Pol">Polski</option>
-				               <option value="His">Historia</option>
-				               <option value="Fiz">Fizyka</option>
-				               <option value="Chem">Chemia</option>
-				               <option value="Geo">Geografia</option>
-				               <option value="Bio">Biologia</option>
-				               <option value="Ang">Angielski</option>
-				               <option value="Inne">Inny</option>
+                    {renderData.map((v)=>{
+                      if(v.key==='All'){
+                        return <option value="">Przedmiot</option>
+                      }
+                      else{
+                        return <option value={v.key}>{v.subject}</option>
+                      }
+                    })}
 			           </select>
 			           <input id="title" type="text" placeholder="Tytuł"/>
 		        </div>
@@ -64,7 +62,7 @@ class App extends Component {
     let url = 'http://localhost:3000/post' + '/' + subject + '/' + title + '/' + postText;
     fetch(url, {method: 'post'});
     this.toggle();
-    setTimeout(this.requestData,2000);
+    setTimeout(this.componentDidMount(),2000);
   }
   filter(key){
     if(key === "All"){
@@ -76,6 +74,7 @@ class App extends Component {
         if(v.subject === key){
           return newarr = [...newarr,v];
         }
+        else return null;
       })
 	    newarr.sort(this.dateSortDesc);
       this.setState({postsCurrent: newarr});
@@ -88,6 +87,7 @@ class App extends Component {
       if(v.title.toLowerCase().includes(value)===true){
         return newarr = [...newarr,v];
       }
+      else return null;
     })
 	newarr.sort(this.dateSortDesc);
     this.setState({postsCurrent: newarr});
@@ -107,16 +107,11 @@ class App extends Component {
           <input placeholder="Szukaj..." onChange={(e)=>this.search(e.target.value)}></input>
         </div>
         <div className="nav">
-          <div className="nav-Inne" onClick={()=>{this.filter("All")}}>&#10227;</div>
-          <div className="nav-Mat" onClick={()=>{this.filter("Mat")}}>Matematyka</div>
-          <div className="nav-Pol" onClick={()=>{this.filter("Pol")}}>Polski</div>
-          <div className="nav-His" onClick={()=>{this.filter("His")}}>Historia</div>
-          <div className="nav-Fiz" onClick={()=>{this.filter("Fiz")}}>Fizyka</div>
-          <div className="nav-Chem" onClick={()=>{this.filter("Chem")}}>Chemia</div>
-          <div className="nav-Geo" onClick={()=>{this.filter("Geo")}}>Geografia</div>
-          <div className="nav-Bio" onClick={()=>{this.filter("Bio")}}>Biologia</div>
-          <div className="nav-Ang" onClick={()=>{this.filter("Ang")}}>Angielski</div>
-          <div className="nav-Inne" onClick={()=>{this.filter("Inne")}}>Inne</div>
+          {renderData.map((v)=>{
+            let className = 'nav-' + v.key;
+            let key=v.key;
+            return <div className={className} onClick={()=>{this.filter(key)}}>{v.subject}</div>;
+          })}
         </div>
         <div className="add">
           <button onClick={()=>this.toggle()}>{(this.state.postAdd) ? '^' : 'Dodaj post'}</button>

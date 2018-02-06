@@ -19,7 +19,7 @@ class Post extends Component {
     let comment = document.getElementById(this.props.id).value;
     let url = 'http://localhost:3000/comment' + '/' + this.props.id + '/' + comment;
     fetch(url, {method: 'post'});
-    if(comment!=''){
+    if(comment!==''){
       document.getElementById(this.props.id).value = "Wysłano!";
       setTimeout(this.props.refreshData,1500);
     }

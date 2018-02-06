@@ -107,6 +107,9 @@
 .nav-Inne{
   color: var(--text);
 }
+.nav-All{
+  color: var(--text);
+}
 div.nav-Mat:hover{
   color: #fff;
   background: var(--Mat);
@@ -140,6 +143,10 @@ div.nav-Geo:hover{
   background: var(--Geo);
 }
 div.nav-Inne:hover{
+  color: #fff;
+  background-color: var(--text);
+}
+div.nav-All:hover{
   color: #fff;
   background-color: var(--text);
 }
