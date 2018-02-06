@@ -13,6 +13,9 @@ class App extends Component {
     }
   }
   componentDidMount(){
+    this.requestData();
+  }
+  requestData = ()  =>{
     let url = 'http://localhost:3000/posts';
     fetch(url)
       .then((response)=>response.json())
@@ -62,7 +65,7 @@ class App extends Component {
     let url = 'http://localhost:3000/post' + '/' + subject + '/' + title + '/' + postText;
     fetch(url, {method: 'post'});
     this.toggle();
-    setTimeout(this.componentDidMount(),2000);
+    setTimeout(this.requestData(),2000);
   }
   filter(key){
     if(key === "All"){
