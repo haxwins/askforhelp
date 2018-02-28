@@ -47,7 +47,7 @@ class App extends Component {
 			           <textarea id="postText" rows="3" placeholder="Treść..."/>
 		        </div>
 		        <div>
-			           <button onClick={(e)=>{this.handleSubmit(e)}}>Wyślij</button>
+			           <button onClick={this.handleSubmit}>Wyślij</button>
 	          </div>
 		       </form>
 		   </div>
@@ -67,7 +67,7 @@ class App extends Component {
     this.toggle();
     setTimeout(this.requestData(),2000);
   }
-  filter(key){
+  filter = (key) =>{
     if(key === "All"){
       this.setState({postsCurrent: this.state.postsAll});
     }
@@ -83,8 +83,8 @@ class App extends Component {
       this.setState({postsCurrent: newarr});
     }
   }
-  search(value){
-    value = value.toLowerCase();
+  search = (e) =>{
+    let value = e.target.value.toLowerCase();
     let newarr=[];
     this.state.postsAll.map((v)=>{
       if(v.title.toLowerCase().includes(value)===true){
@@ -107,7 +107,7 @@ class App extends Component {
     return (
       <div>
         <div className="input">
-          <input placeholder="Szukaj..." onChange={(e)=>this.search(e.target.value)}></input>
+          <input placeholder="Szukaj..." onChange={this.search}></input>
         </div>
         <div className="nav">
           {renderData.map((v)=>{
@@ -117,7 +117,7 @@ class App extends Component {
           })}
         </div>
         <div className="add">
-          <button onClick={()=>this.toggle()}>{(this.state.postAdd) ? '^' : 'Dodaj post'}</button>
+          <button onClick={this.toggle}>{(this.state.postAdd) ? '^' : 'Dodaj post'}</button>
         </div>
 		<div>
 			{this.showPostAdd()}
