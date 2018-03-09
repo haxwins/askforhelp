@@ -1,165 +1,196 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 @import url("colors.css");
-.nav{
-  margin: 30px 0 20px 0;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.nav {
+    margin: 30px 0 20px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
-.nav div{
-  font-family: Bree Serif;
-  flex-grow: 1;
-  text-align: center;
-  font-size: 18px;
-  margin-left: -1px;
-  cursor: pointer;
-  padding:0 5px 0 5px;
+
+.nav div {
+    font-family: Bree Serif;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 18px;
+    margin-left: -1px;
+    cursor: pointer;
+    padding: 0 5px 0 5px;
 }
-.input{
-  display: flex;
-  justify-content: center;
-  margin: 0 0 30px 0;
+
+.input {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 30px 0;
 }
-.input input{
-  padding-left: 5px;
-  font-size: 14px;
-  font-family: Open Sans;
-  display: inline-block;
-  box-shadow: inset 0px 0px 0px 0px #bcbcbc;
-  min-width: 500px;
-  border: 3px var(--light) solid;
-  color: var(--text);
-  box-sizing: border-box;
+
+.input input {
+    padding-left: 5px;
+    font-size: 14px;
+    font-family: Open Sans;
+    display: inline-block;
+    box-shadow: inset 0px 0px 0px 0px #bcbcbc;
+    min-width: 500px;
+    border: 3px var(--light) solid;
+    color: var(--text);
+    box-sizing: border-box;
 }
-.add{
-  display: flex;
-  justify-content: flex-end;
-  margin:0 0 6px 0;
+
+.add {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 6px 0;
 }
-.add button{
-  cursor: pointer;
-  padding:2px;
-  background-color: var(--Mat);
-  border: 1px solid var(--Mat);
-  min-width: 200px;
-  color: #fff;
-  font-family: Bree Serif;
+
+.add button {
+    cursor: pointer;
+    padding: 2px;
+    background-color: var(--Mat);
+    border: 1px solid var(--Mat);
+    min-width: 200px;
+    color: #fff;
+    font-family: Bree Serif;
 }
-.addPost{
-	width:calc(100%-20px);
-	border: 3px var(--light) solid;
-	color: var(--text);
-	padding:0 0 0 15px;
-	margin: -3px 0 20px 0px;
+
+.addPost {
+    width: calc(100%-20px);
+    border: 3px var(--light) solid;
+    color: var(--text);
+    padding: 0 0 0 15px;
+    margin: -3px 0 20px 0px;
 }
-.addPost select{
-	font-family: Open Sans;
-	padding:3px;
-	margin: 10px 0 10px 10px;
+
+.addPost select {
+    font-family: Open Sans;
+    padding: 3px;
+    margin: 10px 0 10px 10px;
 }
-.addPost input[type=text]{
-	font-family: Open Sans;
-	padding:3px;
-	margin:0 0 0 10px;
+
+.addPost input[type=text] {
+    font-family: Open Sans;
+    padding: 3px;
+    margin: 0 0 0 10px;
 }
-.addPost textarea{
-	resize: none;
-	font-family: Open Sans;
-	width:95%;
-	padding:3px;
-	margin:0 0 0 10px;
+
+.addPost textarea {
+    resize: none;
+    font-family: Open Sans;
+    width: 95%;
+    padding: 3px;
+    margin: 0 0 0 10px;
 }
-.addPost button{
-  margin:10px 0 10px 10px;
-  cursor: pointer;
-  padding:2px;
-  background-color: var(--Mat);
-  border: 1px solid var(--Mat);
-  min-width: 200px;
-  color: #fff;
-  font-family: Bree Serif;
+
+.addPost button {
+    margin: 10px 0 10px 10px;
+    cursor: pointer;
+    padding: 2px;
+    background-color: var(--Mat);
+    border: 1px solid var(--Mat);
+    min-width: 200px;
+    color: #fff;
+    font-family: Bree Serif;
 }
-.nav-Mat{
-  color: var(--Mat);
+
+.nav-Mat {
+    color: var(--Mat);
 }
-.nav-Pol{
-  color: var(--Pol);
+
+.nav-Pol {
+    color: var(--Pol);
 }
-.nav-Ang{
-  color: var(--Ang);
+
+.nav-Ang {
+    color: var(--Ang);
 }
-.nav-His{
-  color: var(--His);
+
+.nav-His {
+    color: var(--His);
 }
-.nav-Bio{
-  color: var(--Bio);
+
+.nav-Bio {
+    color: var(--Bio);
 }
-.nav-Fiz{
-  color: var(--Fiz);
+
+.nav-Fiz {
+    color: var(--Fiz);
 }
-.nav-Chem{
-  color: var(--Chem);
+
+.nav-Chem {
+    color: var(--Chem);
 }
-.nav-Geo{
-  color: var(--Geo);
+
+.nav-Geo {
+    color: var(--Geo);
 }
-.nav-Inne{
-  color: var(--text);
+
+.nav-Inne {
+    color: var(--text);
 }
-.nav-All{
-  color: var(--text);
+
+.nav-All {
+    color: var(--text);
 }
-div.nav-Mat:hover{
-  color: #fff;
-  background: var(--Mat);
+
+div.nav-Mat:hover {
+    color: #fff;
+    background: var(--Mat);
 }
-div.nav-Pol:hover{
-  color: #fff;
-  background: var(--Pol);
+
+div.nav-Pol:hover {
+    color: #fff;
+    background: var(--Pol);
 }
-div.nav-His:hover{
-  color: #fff;
-  background: var(--His);
+
+div.nav-His:hover {
+    color: #fff;
+    background: var(--His);
 }
-div.nav-Ang:hover{
-  color: #fff;
-  background: var(--Ang);
+
+div.nav-Ang:hover {
+    color: #fff;
+    background: var(--Ang);
 }
-div.nav-Bio:hover{
-  color: #fff;
-  background: var(--Bio);
+
+div.nav-Bio:hover {
+    color: #fff;
+    background: var(--Bio);
 }
-div.nav-Fiz:hover{
-  color: #fff;
-  background: var(--Fiz);
+
+div.nav-Fiz:hover {
+    color: #fff;
+    background: var(--Fiz);
 }
-div.nav-Chem:hover{
-  color: #fff;
-  background: var(--Chem);
+
+div.nav-Chem:hover {
+    color: #fff;
+    background: var(--Chem);
 }
-div.nav-Geo:hover{
-  color: #fff;
-  background: var(--Geo);
+
+div.nav-Geo:hover {
+    color: #fff;
+    background: var(--Geo);
 }
-div.nav-Inne:hover{
-  color: #fff;
-  background-color: var(--text);
+
+div.nav-Inne:hover {
+    color: #fff;
+    background-color: var(--text);
 }
-div.nav-All:hover{
-  color: #fff;
-  background-color: var(--text);
+
+div.nav-All:hover {
+    color: #fff;
+    background-color: var(--text);
 }
-@media (max-width: 1000px){
-	.input input{
-		padding-left: 5px;
-		font-size: 14px;
-		font-family: Open Sans;
-		display: inline-block;
-		box-shadow: inset 0px 0px 0px 0px #bcbcbc;
-		min-width: 70%;
-		border: 3px var(--light) solid;
-		color: var(--text);
-		box-sizing: border-box;
-	}
+
+@media (max-width: 1000px) {
+    .input input {
+        padding-left: 5px;
+        font-size: 14px;
+        font-family: Open Sans;
+        display: inline-block;
+        box-shadow: inset 0px 0px 0px 0px #bcbcbc;
+        min-width: 70%;
+        border: 3px var(--light) solid;
+        color: var(--text);
+        box-sizing: border-box;
+    }
 }

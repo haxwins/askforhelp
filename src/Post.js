@@ -2,45 +2,45 @@ import React, { Component } from 'react';
 import './post.css';
 
 class Post extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       postOpen: false,
     }
   }
-  componentWillReceiveProps(){
-    this.setState({postOpen: false})
+  componentWillReceiveProps() {
+    this.setState({ postOpen: false })
   }
-  toggle = () =>{
-    this.setState({postOpen: !this.state.postOpen});
+  toggle = () => {
+    this.setState({ postOpen: !this.state.postOpen });
   }
-  handleSubmit = (e) =>{
+  handleSubmit = (e) => {
     e.preventDefault()
     let comment = document.getElementById(this.props.id).value;
     let url = 'http://localhost:3000/comment' + '/' + this.props.id + '/' + comment;
-    fetch(url, {method: 'post'});
-    if(comment!==''){
+    fetch(url, { method: 'post' });
+    if (comment !== '') {
       document.getElementById(this.props.id).value = "Wysłano!";
-      setTimeout(this.props.refreshData,1500);
+      setTimeout(this.props.refreshData, 1500);
     }
-    else{
-        document.getElementById(this.props.id).placeholder = "Wypełnij pole";
+    else {
+      document.getElementById(this.props.id).placeholder = "Wypełnij pole";
     }
   }
-  showPost = () =>{
-    if(this.state.postOpen){
+  showPost = () => {
+    if (this.state.postOpen) {
       return (
         <div className="postInside">
           <div>{this.props.post}</div>
-          <div>{this.props.comments.map((v)=>{return <div className="comment">{v}</div>})}</div>
-		      <form>
-			       <textarea id={this.props.id} placeholder="Dodaj odpowiedz..." rows="10" cols="30"/>
-             <button id="z" className="addComm" onClick={this.handleSubmit}>Dodaj odpowiedz</button>
-		      </form>
+          <div>{this.props.comments.map((v) => { return <div className="comment">{v}</div> })}</div>
+          <form>
+            <textarea id={this.props.id} placeholder="Dodaj odpowiedz..." rows="10" cols="30" />
+            <button id="z" className="addComm" onClick={this.handleSubmit}>Dodaj odpowiedz</button>
+          </form>
         </div>
       )
     }
-    else{
+    else {
       return <div></div>
     }
   }
@@ -50,8 +50,8 @@ class Post extends Component {
         <div className="post">
           <div className={this.props.subject + ' subject'}>
             {this.props.subject}
-            </div>
-          <div className="title" onClick={()=>{this.toggle()}}>
+          </div>
+          <div className="title" onClick={() => { this.toggle() }}>
             <div>{this.props.title}</div>
           </div>
         </div>

@@ -1,28 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 @import url("./src/colors.css");
-body{
-  background-color: var(--back);
-  font: 15px/1.5 Arial, Helvetica, sans-serif;
+body {
+    background-color: var(--back);
+    font: 15px/1.5 Arial, Helvetica, sans-serif;
 }
-.container{
-  width: 1000px;
-  margin: auto;
+
+.container {
+    width: 1000px;
+    margin: auto;
 }
-header .container h1{
-  font-size: 50px;
-  text-align: center;
-  font-family: Bree Serif;
+
+header .container h1 {
+    font-size: 50px;
+    text-align: center;
+    font-family: Bree Serif;
 }
-footer p{
-  color: var(--dark);
-  margin-top: 100px;
-  font-size: 10px;
-  text-align: center;
+
+footer p {
+    color: var(--dark);
+    margin-top: 100px;
+    font-size: 10px;
+    text-align: center;
 }
+
 @media (max-width: 1000px) {
-  .container{
-	width:100%;
-	margin:auto;
-	}
+    .container {
+        width: 100%;
+        margin: auto;
+    }
 }

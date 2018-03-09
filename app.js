@@ -11,13 +11,13 @@ mongoose.connect('mongodb://localhost/askforhelp');
 let db = mongoose.connection;
 
 //requests
-app.get('/connectioncheck',(req, res)=>{
+app.get('/connectioncheck', (req, res) => {
 	res.send('Server is working');
 });
 //getting all posts
-app.get('/posts', (req, res)=>{
-	Post.getPost((err,post)=>{
-		if(err){
+app.get('/posts', (req, res) => {
+	Post.getPost((err, post) => {
+		if (err) {
 			console.log("err");
 		}
 		res.json(post);
@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.use(bodyParser.json());
-app.post('/post/:subject/:title/:postText',(req,res)=>{
+app.post('/post/:subject/:title/:postText', (req, res) => {
 	let newPost = {
 		date: new Date(),
 		subject: req.params.subject,
@@ -37,18 +37,18 @@ app.post('/post/:subject/:title/:postText',(req,res)=>{
 		comments: []
 	}
 	Post.addPost(newPost, (err, newPost) => {
-		if(err){
+		if (err) {
 			throw err;
 		}
 		res.json(newPost);
 	})
 });
 //adding new comment
-app.post('/comment/:_id/:comment',(req,res)=>{
+app.post('/comment/:_id/:comment', (req, res) => {
 	let id = req.params._id;
 	let newComm = req.params.comment;
 	Post.addComm(id, newComm, {}, (err, newComm) => {
-		if(err){
+		if (err) {
 			throw err;
 		}
 		res.json(newComm)

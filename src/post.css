@@ -1,94 +1,110 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 @import url("colors.css");
-.post{
-  margin-top: -3px;
-  font-size: 15px;
-  border: 3px var(--light) solid;
-  background-color: var(--back);
-  font-family: Open Sans;
-  color: var(--text);
-}
-.post div{
-  display: inline-block;
-}
-.postInside{
-  margin-top: -3px;
-  font-size: 15px;
-  border: 3px var(--light) solid;
-  background-color: var(--back);
-  font-family: Open Sans;
-  color: var(--text);
-  padding:10px;
-}
-.postInside textarea{
-  padding: 4px;
-  border: 3px var(--light) solid;
-  font-family: Open Sans;
-  color: var(--text);
-  font-size: 12px;
-  margin-top:30px;
-  width:98%;
-  height: 50px;
-  resize: none;
-}
-.comment{
-  margin-top: 20px;
-  font-size: 15px;
-  border: 3px var(--light) solid;
-  background-color: var(--back);
-  font-family: Open Sans;
-  color: var(--text);
-  padding:10px;
-}
-.addComm{
-  cursor: pointer;
-  padding:2px;
-  margin:10px 0 0 50px;
-  background-color: var(--Mat);
-  border: 1px solid var(--Mat);
-  min-width: 200px;
-  color: #fff;
-  font-family: Bree Serif;
-}
-.subject{
-  font-family: Bree Serif;
-  width: 10%;
-  text-align: center;
+.post {
+    margin-top: -3px;
+    font-size: 15px;
+    border: 3px var(--light) solid;
+    background-color: var(--back);
+    font-family: Open Sans;
+    color: var(--text);
 }
 
-.Mat{
-  color: var(--Mat);
+.post div {
+    display: inline-block;
 }
-.Ang{
-  color: var(--Ang);
+
+.postInside {
+    margin-top: -3px;
+    font-size: 15px;
+    border: 3px var(--light) solid;
+    background-color: var(--back);
+    font-family: Open Sans;
+    color: var(--text);
+    padding: 10px;
 }
-.Pol{
-  color: var(--Pol);
+
+.postInside textarea {
+    padding: 4px;
+    border: 3px var(--light) solid;
+    font-family: Open Sans;
+    color: var(--text);
+    font-size: 12px;
+    margin-top: 30px;
+    width: 98%;
+    height: 50px;
+    resize: none;
 }
-.Bio{
-  color: var(--Bio);
+
+.comment {
+    margin-top: 20px;
+    font-size: 15px;
+    border: 3px var(--light) solid;
+    background-color: var(--back);
+    font-family: Open Sans;
+    color: var(--text);
+    padding: 10px;
 }
-.His{
-  color: var(--His);
+
+.addComm {
+    cursor: pointer;
+    padding: 2px;
+    margin: 10px 0 0 50px;
+    background-color: var(--Mat);
+    border: 1px solid var(--Mat);
+    min-width: 200px;
+    color: #fff;
+    font-family: Bree Serif;
 }
-.Fiz{
-  color: var(--Fiz);
+
+.subject {
+    font-family: Bree Serif;
+    width: 10%;
+    text-align: center;
 }
-.Chem{
-  color: var(--Chem);
+
+.Mat {
+    color: var(--Mat);
 }
-.Geo{
-  color: var(--Geo);
+
+.Ang {
+    color: var(--Ang);
 }
-.Inne{
-  color: #000;
+
+.Pol {
+    color: var(--Pol);
 }
-.title{
-  padding: 2px 0 2px 40px;
-  border-left: 3px var(--light) solid;
+
+.Bio {
+    color: var(--Bio);
 }
-.title:hover{
-  cursor: pointer;
-  color: var(--light);
+
+.His {
+    color: var(--His);
+}
+
+.Fiz {
+    color: var(--Fiz);
+}
+
+.Chem {
+    color: var(--Chem);
+}
+
+.Geo {
+    color: var(--Geo);
+}
+
+.Inne {
+    color: #000;
+}
+
+.title {
+    padding: 2px 0 2px 40px;
+    border-left: 3px var(--light) solid;
+}
+
+.title:hover {
+    cursor: pointer;
+    color: var(--light);
 }
