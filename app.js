@@ -6,6 +6,12 @@ let port = 3000;
 
 Post = require('./models/post');
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // Connect to Mongoose
 mongoose.connect('mongodb://localhost/askforhelp');
 let db = mongoose.connection;
