@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 @import url("./src/colors.css");
-body{
+body {
   background-color: var(--back);
   font: 15px/1.5 Arial, Helvetica, sans-serif;
 }
-.container{
+.container {
   width: 1000px;
   margin: auto;
 }
-header .container h1{
+header .container h1 {
   font-size: 50px;
   text-align: center;
   font-family: Bree Serif;
 }
-footer p{
+footer p {
   color: var(--dark);
   margin-top: 100px;
   font-size: 10px;
